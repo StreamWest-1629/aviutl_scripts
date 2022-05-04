@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.anm": "lua"
+    },
+    "[lua]": {
+        "files.encoding": "shiftjis"
+    }
+}
