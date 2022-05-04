@@ -1,0 +1,48 @@
+
+@ï°êîägèkâÒì]
+--track0:Xé≤ä‘äu,0,1000,100
+--track1:Yé≤ä‘äu,0,1000,100
+--track2:ägëÂó¶,0,1000,100
+--track3:âÒì],-720,720,0
+--dialog:íÜêSì_,pos={0,0};âÒì]é≤,axis=2;--help,helpurl="https://github.com/StreamWest-1629/aviutl_scripts/arrange_objects";
+
+-- é≤é¸ÇËÇÃåvéZ
+obj.setanchor("pos", 1, "line")
+local ox = obj.ox - pos[1]
+local oy = obj.oy - pos[2]
+
+-- ä‘äu
+ox = ox * (obj.track0 * 0.01)
+oy = oy * (obj.track1 * 0.01)
+
+-- ägëÂó¶
+local zoomup = (obj.track2 * 0.01)
+ox = ox * zoomup
+oy = oy * zoomup
+obj.zoom = obj.zoom * zoomup
+
+-- âÒì]
+local rad = math.rad(obj.track3)
+local cos = math.cos(rad)
+local sin = math.sin(rad)
+if axis == 0 then
+    obj.oy = oy * cos - oz * sin
+    obj.oz = oy * sin + oz * cos
+    obj.rx = obj.rx + obj.track3
+    
+elseif axis == 1 then
+    
+    obj.oz = oz * cos - ox * sin
+    obj.ox = oz * sin + ox * cos
+    obj.ry = obj.ry + obj.track3
+
+
+else
+    obj.ox = ox * cos - oy * sin
+    obj.oy = ox * sin + oy * cos
+    obj.rz = obj.rz + obj.track3
+
+end
+
+obj.ox = obj.ox + pos[1]
+obj.oy = obj.oy + pos[2]
