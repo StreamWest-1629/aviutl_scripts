@@ -12,6 +12,7 @@
 
 | 名前 | ディレクトリ名 | 概要 |
 | :-: | :-: | :-- |
+| 複数オブジェクト拡縮回転 | [arrange_objects](./arrange_objects) | 別オブジェクト指定のテキストなどに対して拡大縮小回転などを行います． |
 
 <!-- Issue and Improve project -->
 [@issue_and_improve]:https://github.com/streamwest-1629/aviutl_scripts/projects/1 
